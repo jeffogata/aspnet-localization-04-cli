@@ -7,7 +7,7 @@ namespace AspNetLocalization04
     {
         public static void AddMyLocalization(this IServiceCollection services)
         {
-            services.AddScoped<IStringLocalizerFactory, MyStringLocalizerFactory>();
+            services.AddSingleton<IStringLocalizerFactory, MyStringLocalizerFactory>();
             services.AddTransient(typeof(IStringLocalizer<>), typeof(StringLocalizer<>));
         }
     }
